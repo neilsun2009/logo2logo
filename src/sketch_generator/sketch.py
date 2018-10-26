@@ -80,3 +80,6 @@ class sketch_generator():
     output = 255 - output
 
     cv2.imwrite(self.sketch_output, output)
+
+  def __call__(self):
+    self.calculate()
