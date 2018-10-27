@@ -36,6 +36,11 @@ class sketch_generator():
         oh_end = oh_start + wh_end - wh_start
         ow_start = j * window_width
         ow_end = ow_start + ww_end - ww_start
+        # trim the window by the end
+        ww_end -= max(0, ow_end - width)
+        wh_end -= max(0, oh_end - height)
+        # print(ww_start, ww_end)
+        # print(ow_start, ow_end)
         new_img[oh_start:oh_end, ow_start:ow_end] = img[wh_start:wh_end, ww_start:ww_end]
     return new_img.astype(np.uint8)
 
@@ -49,20 +54,26 @@ class sketch_generator():
   # calculate resize and sketch
   def calculate(self):
     # use imageio to read in gif
-    img = imageio.imread(self.file)
+    # read from url
+    # print(self.file)
+    img = imageio.imread(imageio.core.urlopen(self.file).read())
+    # print(img)
     # img = cv2.imread('./test/suning-small.gif', cv2.IMREAD_GRAYSCALE)
 
     # get cv2-formatted BGR and transfer transparent to white 
-    img_color = img[:,:,(2, 1, 0)]
-    if img.shape[2] > 3:
-      img_color[img[:,:,3]==0] = (255, 255, 255)
+    if (len(img.shape) > 2):
+      img_color = img[:,:,(2, 1, 0)]
+      if img.shape[2] > 3:
+        img_color[img[:,:,3]==0] = (255, 255, 255)
+      img = img_color
 
     # resize to 300*300
-    img = cv2.resize(img_color, (self.size, self.size), interpolation = cv2.INTER_CUBIC)
+    img = cv2.resize(img, (self.size, self.size), interpolation = cv2.INTER_CUBIC)
     cv2.imwrite(self.resize_output, img)
 
     # convert to gray
-    img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    if (len(img.shape) > 2):
+      img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
     # gaussian denoise
     img = cv2.GaussianBlur(img,(5,5),0)
