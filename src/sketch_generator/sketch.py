@@ -83,7 +83,10 @@ class sketch_generator():
 
     # apply jittering
     output = self._jittering(output, 15, 15)
-    # random fading
+    # dilation
+    kernel = np.ones((2, 2), np.uint8)
+    output = cv2.dilate(output, kernel, iterations = 1)
+     # random fading
     output = self._random_fading(output)
     # bilateral smoothing
     output = cv2.bilateralFilter(output, 50, 75, 75)

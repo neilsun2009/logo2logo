@@ -11,7 +11,7 @@ images = spider_json(URL_DE).catch()
 # filter and save
 for i, image in enumerate(images):
   # print(i, image)
-  sketch_generator(image, './dataset/train/germany-%d-target.jpg' % i, './dataset/train/germany-%d-input.jpg' % i).calculate()
+  sketch_generator(image, './dataset-raw/train/germany-%d-target.jpg' % i, './dataset-raw/train/germany-%d-input.jpg' % i).calculate()
   print('Completed %d/%d...' % (i, len(images)))
 
 print('Finished! Congratulations!')
