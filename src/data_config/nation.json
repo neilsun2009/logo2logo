@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "continent": "asia",
+      "url": "http://kotologo.com/json/af9c93ba6b64dc460effa576b5a33d17.json"
+    },
+    {
+      "continent": "europe",
+      "url": "http://kotologo.com/json/80a99bf89a963f39f5f97a2edfe83c06.json"
+    },
+    {
+      "continent": "northamerica",
+      "url": "http://kotologo.com/json/00d9e15c48a51ab60caad2f666ea20fd.json"
+    },
+    {
+      "continent": "southameraca",
+      "url": "http://kotologo.com/json/ee407e736b10d9b261bd4d6a4b2e9536.json"
+    },
+    {
+      "continent": "africa",
+      "url": "http://kotologo.com/json/a75b1a2dc2bf8d1706860c4799804e98.json"
+    },
+    {
+      "continent": "oceania",
+      "url": "http://kotologo.com/json/91fc1e1fc5dd237c38c46f6e5eee3214.json"
+    }
+  ]
+}

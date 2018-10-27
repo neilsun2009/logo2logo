@@ -53,47 +53,47 @@ class sketch_generator():
 
   # calculate resize and sketch
   def calculate(self):
-    # use imageio to read in gif
-    # read from url
-    # print(self.file)
-    img = imageio.imread(imageio.core.urlopen(self.file).read())
-    # print(img)
-    # img = cv2.imread('./test/suning-small.gif', cv2.IMREAD_GRAYSCALE)
+    try:
+      # use imageio to read in gif
+      # read from url
+      # print(self.file)
+      img = imageio.imread(imageio.core.urlopen(self.file).read())
+      # print(img)
+      # img = cv2.imread('./test/suning-small.gif', cv2.IMREAD_GRAYSCALE)
 
-    # get cv2-formatted BGR and transfer transparent to white 
-    if (len(img.shape) > 2):
-      img_color = img[:,:,(2, 1, 0)]
-      if img.shape[2] > 3:
-        img_color[img[:,:,3]==0] = (255, 255, 255)
-      img = img_color
+      # get cv2-formatted BGR and transfer transparent to white 
+      if (len(img.shape) > 2):
+        img_color = img[:,:,(2, 1, 0)]
+        if img.shape[2] > 3:
+          img_color[img[:,:,3]==0] = (255, 255, 255)
+        img = img_color
 
-    # resize to 300*300
-    img = cv2.resize(img, (self.size, self.size), interpolation = cv2.INTER_CUBIC)
-    cv2.imwrite(self.resize_output, img)
+      # resize to 300*300
+      img = cv2.resize(img, (self.size, self.size), interpolation = cv2.INTER_CUBIC)
+      cv2.imwrite(self.resize_output, img)
 
-    # convert to gray
-    if (len(img.shape) > 2):
-      img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+      # convert to gray
+      if (len(img.shape) > 2):
+        img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
 
-    # gaussian denoise
-    img = cv2.GaussianBlur(img,(5,5),0)
+      # gaussian denoise
+      img = cv2.GaussianBlur(img,(5,5),0)
 
-    # get a black bg with white line edged pic
-    output = cv2.Canny(img, 50, 20)
+      # get a black bg with white line edged pic
+      output = cv2.Canny(img, 50, 20)
 
-    # apply jittering
-    output = self._jittering(output, 15, 15)
-    # dilation
-    kernel = np.ones((2, 2), np.uint8)
-    output = cv2.dilate(output, kernel, iterations = 1)
-     # random fading
-    output = self._random_fading(output)
-    # bilateral smoothing
-    output = cv2.bilateralFilter(output, 50, 75, 75)
-    # inverse
-    output = 255 - output
+      # apply jittering
+      output = self._jittering(output, 15, 15)
+      # dilation
+      kernel = np.ones((2, 2), np.uint8)
+      output = cv2.dilate(output, kernel, iterations = 1)
+      # random fading
+      output = self._random_fading(output)
+      # bilateral smoothing
+      output = cv2.bilateralFilter(output, 50, 75, 75)
+      # inverse
+      output = 255 - output
 
-    cv2.imwrite(self.sketch_output, output)
-
-  def __call__(self):
-    self.calculate()
+      cv2.imwrite(self.sketch_output, output)
+    except:
+      print('No logo for this team.')

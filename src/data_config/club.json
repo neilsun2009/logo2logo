@@ -1,0 +1,94 @@
+{
+  "data": [
+    {
+      "country": "china",
+      "url": "http://kotologo.com/json/d1926d56f827b804cacd46c22991e47a.json",
+      "levels": 4
+    },
+    {
+      "country": "germany",
+      "url": "http://kotologo.com/json/deef1fc58a4df998a113c603dee700dc.json",
+      "levels": 3
+    },
+    {
+      "country": "spain",
+      "url": "http://kotologo.com/json/42d8e46cad7529fea76f8deb51b73e1d.json",
+      "levels": 3
+    },
+    {
+      "country": "england",
+      "url": "http://kotologo.com/json/2e27772801b543ed8aa586b83741fc23.json",
+      "levels": 5
+    },
+    {
+      "country": "italy",
+      "url": "http://kotologo.com/json/157a1b34fc440ef543c92b5c4cab4bbe.json",
+      "levels": 3
+    },
+    {
+      "country": "france",
+      "url": "http://kotologo.com/json/9e27ac528fc574c5fffe4b47a8462805.json",
+      "levels": 4
+    },
+    {
+      "country": "netherlands",
+      "url": "http://kotologo.com/json/d40ff6cef39062c39398ae8e98b199d6.json",
+      "levels": 4
+    },
+    {
+      "country": "portugal",
+      "url": "http://kotologo.com/json/f5abd6e0134711f080e913558c286c65.json",
+      "levels": 3
+    },
+    {
+      "country": "scotland",
+      "url": "http://kotologo.com/json/e4f1dbdd266c0a85a4bf135b6f335d66.json",
+      "levels": 4
+    },
+    {
+      "country": "russia",
+      "url": "http://kotologo.com/json/af49d0e5a1c20c7053ef94a4c2b9e697.json",
+      "levels": 3
+    },
+    {
+      "country": "usa",
+      "url": "http://kotologo.com/json/4703e67bb34ce7629114d2cd325cfe4b.json",
+      "levels": 3
+    },
+    {
+      "country": "mexico",
+      "url": "http://kotologo.com/json/c9fddb2f792cfc4de54992ceb5c0c43f.json",
+      "levels": 2
+    },
+    {
+      "country": "brazil",
+      "url": "http://kotologo.com/json/e66a5728689c1c28d4aba74a0a522bc8.json",
+      "levels": 4
+    },
+    {
+      "country": "argentina",
+      "url": "http://kotologo.com/json/d32b7caa2668b9792c3d50c0f39feb18.json",
+      "levels": 5
+    },
+    {
+      "country": "hongkong",
+      "url": "http://kotologo.com/json/e6ed12e67510e73a08e7e867fddc2ade.json",
+      "levels": 4
+    },
+    {
+      "country": "macau",
+      "url": "http://kotologo.com/json/8001ad500a1ef4dd21df39f8a4ee79bc.json",
+      "levels": 3
+    },
+    {
+      "country": "japan",
+      "url": "http://kotologo.com/json/421a80572eb8682536bf3488a4c59da0.json",
+      "levels": 4
+    },
+    {
+      "country": "southkorea",
+      "url": "http://kotologo.com/json/ee3b2284951daba9c755ef5ae553ecb7.json",
+      "levels": 5
+    }
+  ]
+}
