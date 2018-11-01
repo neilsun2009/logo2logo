@@ -192,7 +192,6 @@ class ShowPredictionHook(tf.train.LoggingTensorHook):
   
   def after_run(self, run_context, run_values):
     if self._should_trigger:
-      clear_output(wait=True)
       results = run_values.results
       plt.figure(figsize=(15,15))
 
