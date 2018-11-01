@@ -1,4 +1,9 @@
 dataset-raw/
+dataset/logo-results/
+dataset/test/
+dataset/train/
+checkpoints/
+
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
