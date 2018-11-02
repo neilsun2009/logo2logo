@@ -26,14 +26,20 @@ A pix2pix project converting sketch sports logos to authentic ones, using Tensor
 + For hand-drawn logos, the output really depends on how well the logo is drawn and whether or not it appeared in the training set.
 ## Sample results
 + For data similar to the network has trained, the performance is generally good.
+
 ![ALT TXT](./images/1.jpg)
 + For one-colored logos, even if the network hasn't seen it before, the performance is okay.
+
 ![ALT TXT](./images/2.jpg)
 + But some simple-shaped logos may be misclassified as one-colored logos, and some may confuse the network on where to paint the color.
+
 ![ALT TXT](./images/3.jpg)
 + For other logos, some of them get fairly good results.
+
 ![ALT TXT](./images/4.jpg)
 + While others really struggle.
+
 ![ALT TXT](./images/5.jpg)
 + As for genuine hand-drawn logos, some minor features may be detected and correctly painted, however the overall result is not very pleasing.
+
 ![ALT TXT](./images/6.jpg)
