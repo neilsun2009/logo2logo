@@ -18,10 +18,22 @@ A pix2pix project converting sketch sports logos to authentic ones, using Tensor
 + The network performs a lot better in single-colored logos than in multi-color logos.
 + I think after epochs of training, the network on the one hand overfits, on the other hand will choose the color for a certain shape, say circle base on the statistical property of the training set. (Of course the real feature the network learns will be way more delicate and specific.)
 ## Testing
-+ I used some left logos from spider and my photoshoped logos from first try-out as test set.
++ I used some left-over logos from spider and my photoshoped logos from first try-out as test set.
 + I also included some real hand-drawn logos by my friend Tong.
 + I found that for logos that appeared in the trianing set (of course the sketch is still different, these would be my photoshoped logos), the network overfitted so that they would appear to be good.
 + But for new logos, the network still struggles, especially for multi-colored logos.
 + Surprisingly the network learned how to identify a single-colored logo, and paint it accordingly. Maybe they generally contains simple layout.
 + For hand-drawn logos, the output really depends on how well the logo is drawn and whether or not it appeared in the training set.
 ## Sample results
++ For data similar to the network has trained, the performance is generally good.
+![ALT TXT](./images/1.jpg)
++ For one-colored logos, even if the network hasn't seen it before, the performance is okay.
+![ALT TXT](./images/2.jpg)
++ But some simple-shaped logos may be misclassified as one-colored logos, and some may confuse the network on where to paint the color.
+![ALT TXT](./images/3.jpg)
++ For other logos, some of them get fairly good results.
+![ALT TXT](./images/4.jpg)
++ While others really struggle.
+![ALT TXT](./images/5.jpg)
++ As for genuine hand-drawn logos, some minor features may be detected and correctly painted, however the overall result is not very pleasing.
+![ALT TXT](./images/6.jpg)
